@@ -5,6 +5,6 @@
 	"author": "Daniel Andrade",
 	"license": "ISC",
 	"dependencies": {
-		"tree-siter-edl": "^1.0.0"
+		"tree-sitter-edl": "^1.0.0"
 	}
 }
