@@ -1,0 +1,10 @@
+{
+	"name": "language-edl",
+	"version": "0.1.0",
+	"description": "Enclave Definition Language (EDL) support in Atom",
+	"author": "Daniel Andrade",
+	"license": "ISC",
+	"dependencies": {
+		"tree-siter-edl": "^1.0.0"
+	}
+}

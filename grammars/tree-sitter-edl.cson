@@ -1,0 +1,69 @@
+name: 'Enclave Definition Language'
+scopeName: 'source.edl'
+type: 'tree-sitter'
+parser: 'tree-sitter-edl'
+
+fileTypes: ['edl']
+
+scopes:
+	'source_file': 'source.edl'
+	'comments': 'comment.block'
+
+	'"from"': 'keyword.control.directive'
+	'"import"': 'keyword.control.directive'
+	'"include"': 'keyword.control.directive'
+	'header_name': 'string.quoted.other'
+	'from > "*"': 'string.quoted.other'
+
+	'''
+	"enclave",
+	"trusted",
+	"untrusted"
+	''': 'keyword.control.directive'
+
+	'''
+	ecall_definition > identifier,
+	ocall_definition > identifier
+	''': 'entity.name.function'
+
+	'trusted_prefix': 'storage.modifier'
+
+	#'attribute_list': 'keyword.control.directive'
+	#'_pointer_attributes': 'variable.other.member'
+	'''
+	"in",
+	"out",
+	"user_check",
+	"string",
+	"wstring",
+	"size",
+	"count",
+	"isptr",
+	"readonly"
+	''': 'variable.other.member'
+
+	'type_qualifier': 'storage.modifier'
+
+	'type_specifier': 'support.storage.type'
+
+	#'identifier': 'constant.variable'
+	'number': 'constant.numeric.decimal'
+
+	'";"': 'punctuation.terminator.statement'
+	'"["': 'punctuation.definition.begin.bracket.square'
+	'"]"': 'punctuation.definition.end.bracket.square'
+	'","': 'punctuation.separator.delimiter'
+	'"{"': 'punctuation.section.block.begin.bracket.curly'
+	'"}"': 'punctuation.section.block.end.bracket.curly'
+	'"("': 'punctuation.section.parens.begin.bracket.round'
+	'")"': 'punctuation.section.parens.end.bracket.round'
+
+	'"*"': 'keyword.operator'
+	'"="': 'keyword.operator'
+
+folds: [
+	type: 'comment'
+]
+
+comments:
+	start: '// '
