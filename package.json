@@ -1,9 +1,16 @@
 {
 	"name": "language-edl",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"description": "Enclave Definition Language (EDL) support in Atom",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Andrade/language-edl.git"
+	},
 	"author": "Daniel Andrade",
 	"license": "ISC",
+	"engines": {
+		"atom": "*"
+	},
 	"dependencies": {
 		"tree-sitter-edl": "^1.0.0"
 	}
