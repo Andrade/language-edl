@@ -13,7 +13,6 @@ scopes:
 	'"import"': 'keyword.control.directive'
 	'"include"': 'keyword.control.directive'
 	'header_name': 'string.quoted.other'
-	'from > "*"': 'string.quoted.other'
 
 	'''
 	"enclave",
@@ -22,13 +21,19 @@ scopes:
 	''': 'keyword.control.directive'
 
 	'''
+	import_list > identifier,
 	ecall_definition > identifier,
-	ocall_definition > identifier
+	ocall_definition > identifier,
+	untrusted_suffix_allow > identifier
 	''': 'entity.name.function'
 
-	'trusted_prefix': 'storage.modifier'
+	'''
+	trusted_prefix_public,
+	untrusted_suffix_allow > "allow",
+	suffix_propagate_errno,
+	suffix_transition_using_threads
+	''': 'keyword.control'
 
-	#'attribute_list': 'keyword.control.directive'
 	#'_pointer_attributes': 'variable.other.member'
 	'''
 	"in",
@@ -38,6 +43,7 @@ scopes:
 	"wstring",
 	"size",
 	"count",
+	"isary",
 	"isptr",
 	"readonly"
 	''': 'variable.other.member'
@@ -46,7 +52,15 @@ scopes:
 
 	'type_specifier': 'support.storage.type'
 
-	#'identifier': 'constant.variable'
+	'''
+	"enum",
+	"struct",
+	"union"
+	''': 'keyword.control'
+
+	#'void_type': 'support.storage.type'
+	'"void"': 'support.storage.type'
+
 	'number': 'constant.numeric.decimal'
 
 	'";"': 'punctuation.terminator.statement'
@@ -58,7 +72,7 @@ scopes:
 	'"("': 'punctuation.section.parens.begin.bracket.round'
 	'")"': 'punctuation.section.parens.end.bracket.round'
 
-	'"*"': 'keyword.operator'
+	'"*"': 'storage.modifier'
 	'"="': 'keyword.operator'
 
 folds: [
