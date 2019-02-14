@@ -9,7 +9,8 @@
 	"author": "Daniel Andrade",
 	"license": "ISC",
 	"engines": {
-		"atom": "*"
+		"atom": "*",
+		"node": "*"
 	},
 	"dependencies": {
 		"tree-sitter-edl": "^1.0.0"
